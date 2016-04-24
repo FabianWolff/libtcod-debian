@@ -1,0 +1,4 @@
+repo: 5b845890757fadf27a11843a5cbfbbf9e04721d5
+node: 40125c08ce3c9ec025d60b4f5aca0a9ef418f8f7
+branch: default
+tag: 1.6.0-pre1
