@@ -1,0 +1,17 @@
+Description: Use global zlib.h instead of local copy
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2016-03-23
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/zip_c.c
++++ b/src/zip_c.c
+@@ -26,7 +26,7 @@
+ */
+ #include <stdlib.h>
+ #include <string.h>
+-#include "zlib/zlib.h"
++#include <zlib.h>
+ #include "libtcod.h"
+ #include "libtcod_int.h"
+ 

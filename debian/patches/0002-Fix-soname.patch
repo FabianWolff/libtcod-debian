@@ -1,0 +1,58 @@
+Description: Fix SONAME
+ Make sure libtool creates properly named *.so.* files.
+ Also, some missing libraries have been added to LDFLAGS.
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2016-03-23
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/build/autotools/Makefile.am
++++ b/build/autotools/Makefile.am
+@@ -2,9 +2,12 @@
+ AM_CPPFLAGS = -I$(top_srcdir)/../../include -DTCOD_SDL2 -DNO_OPENGL -DNDEBUG -O2
+ AM_LDFLAGS = -lz
+ 
+-lib_LTLIBRARIES = libtcod.la libtcodxx.la
++lib_LTLIBRARIES = libtcod-1.6.la libtcodxx-1.6.la
+ 
+-libtcod_la_SOURCES = \
++libtcod_1_6_la_LDFLAGS = -version-info 0:0:0 -lX11 -lpthread -ldl -lm -lz
++libtcodxx_1_6_la_LDFLAGS = -version-info 0:0:0
++
++libtcod_1_6_la_SOURCES = \
+ 	../../src/bresenham_c.c \
+ 	../../src/bsp_c.c \
+ 	../../src/color_c.c \
+@@ -85,8 +88,8 @@
+ 	../../include/zip.hpp \
+ 	../../include/list.hpp
+ 
+-libtcodxx_la_LIBADD = libtcod.la
+-libtcodxx_la_SOURCES = \
++libtcodxx_1_6_la_LIBADD = libtcod-1.6.la
++libtcodxx_1_6_la_SOURCES = \
+ 	../../src/bresenham.cpp \
+ 	../../src/bsp.cpp \
+ 	../../src/color.cpp \
+--- a/build/autotools/gui/Makefile.am
++++ b/build/autotools/gui/Makefile.am
+@@ -1,6 +1,7 @@
+ AM_CPPFLAGS = -I$(top_srcdir)/../../include -I$(top_srcdir)/../../include/gui -DTCOD_SDL2 -DNO_OPENGL -DNDEBUG -O2
+ 
+-lib_LTLIBRARIES = libtcodgui.la
++lib_LTLIBRARIES = libtcodgui-1.6.la
++libtcodgui_1_6_la_LDFLAGS = -version-info 0:0:0
+ 
+ otherincludedir = $(includedir)/libtcod/gui
+ otherinclude_HEADERS = \
+@@ -20,8 +21,8 @@
+ 	../../../include/gui/vbox.hpp \
+ 	../../../include/gui/widget.hpp
+ 
+-libtcodgui_la_LIBADD = ../libtcodxx.la
+-libtcodgui_la_SOURCES = \
++libtcodgui_1_6_la_LIBADD = ../libtcodxx-1.6.la
++libtcodgui_1_6_la_SOURCES = \
+ 	../../../src/gui/button.cpp \
+ 	../../../src/gui/container.cpp \
+ 	../../../src/gui/flatlist.cpp \

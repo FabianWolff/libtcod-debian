@@ -1,0 +1,5 @@
+libtcod (1.6.0~pre1+dfsg-1) UNRELEASED; urgency=medium
+
+  * Initial release. Closes: #704587
+
+ -- Fabian Wolff <fabi.wolff@arcor.de>  Wed, 23 Mar 2016 15:13:04 +0100

@@ -1,0 +1,40 @@
+Source: libtcod
+Maintainer: Fabian Wolff <fabi.wolff@arcor.de>
+Section: libs
+Priority: extra
+Build-Depends: debhelper (>= 9),
+               autoconf,
+               automake,
+               libtool,
+               pkg-config,
+               libsdl2-dev,
+               zlib1g-dev
+Standards-Version: 3.9.8
+Homepage: https://bitbucket.org/libtcod/libtcod
+
+Package: libtcod-1.6-0
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: graphics and utility library for roguelike developers
+ Libtcod offers a free, fast, portable and uncomplicated API for
+ roguelike developers providing an advanced true color console, input
+ and lots of other utilities frequently used in roguelikes.
+ .
+ This package contains the runtime libraries. You shouldn't have to
+ install it manually.
+
+Package: libtcod-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libtcod-1.6-0 (= ${binary:Version}),
+         ${misc:Depends}
+Description: development files for the libtcod roguelike library
+ Libtcod offers a free, fast, portable and uncomplicated API for
+ roguelike developers providing an advanced true color console, input
+ and lots of other utilities frequently used in roguelikes.
+ .
+ This package contains the development files.
