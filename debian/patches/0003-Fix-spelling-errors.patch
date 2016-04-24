@@ -1,0 +1,221 @@
+Description: Fix spelling errors
+ Fix the spelling errors reported by codespell.
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: https://bitbucket.org/libtcod/libtcod/pull-requests/42/fix-spelling-errors
+Last-Update: 2016-04-24
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/build/autotools/run_autotools.sh
++++ b/build/autotools/run_autotools.sh
+@@ -196,7 +196,7 @@
+           echo "*** If you have an old version installed, it is best to remove it, although"
+           echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"],
+         [ echo "*** The test program failed to compile or link. See the file config.log for the"
+-          echo "*** exact error that occured. This usually means SDL was incorrectly installed"
++          echo "*** exact error that occurred. This usually means SDL was incorrectly installed"
+           echo "*** or that you have moved SDL since it was installed. In the latter case, you"
+           echo "*** may want to edit the sdl2-config script: $SDL2_CONFIG" ])
+           CFLAGS="$ac_save_CFLAGS"
+--- a/include/bsp.hpp
++++ b/include/bsp.hpp
+@@ -157,7 +157,7 @@
+ 	/**
+ 	@PageName bsp_split
+ 	@FuncTitle Recursively splitting a node
+-	@FuncDesc You can also recursively split the bsp. At each step, a random orientation (horizontal/vertical) and position are choosen :
++	@FuncDesc You can also recursively split the bsp. At each step, a random orientation (horizontal/vertical) and position are chosen :
+ 	@Cpp void TCODBsp::splitRecursive(TCODRandom *randomizer, int nb, int minHSize, int minVSize, float maxHRatio, float maxVRatio);
+ 	@C void TCOD_bsp_split_recursive(TCOD_bsp_t *node, TCOD_random_t randomizer, int nb, int minHSize, int minVSize, float maxHRatio, float maxVRatio)
+ 	@Py bsp_split_recursive(node, randomizer, nb, minHSize, minVSize, maxHRatio, maxVRatio)
+--- a/include/console.hpp
++++ b/include/console.hpp
+@@ -44,7 +44,7 @@
+ 			TCODSystem::checkForEvent(TCOD_EVENT_KEY_PRESS,&key,NULL);
+ 			updateWorld (key, TCODSystem::getLastFrameLength());
+ 			// updateWorld(TCOD_key_t key, float elapsed) (using key if key.vk != TCODK_NONE)
+-			// use elapsed to scale any update that is time dependant.
++			// use elapsed to scale any update that is time dependent.
+ 			// ... draw world+GUI on TCODConsole::root
+ 			TCODConsole::flush();
+ 		}
+@@ -410,7 +410,7 @@
+ 	/**
+ 	@PageName console_credits
+ 	@FuncTitle Restart the credits animation
+-	@FuncDesc When using rederCredits, you can restart the credits animation from the begining before it's finished by calling this function.
++	@FuncDesc When using rederCredits, you can restart the credits animation from the beginning before it's finished by calling this function.
+ 	@Cpp static void TCODConsole::resetCredits()
+ 	@C void TCOD_console_credits_reset()
+ 	@Py console_credits_reset()
+@@ -989,7 +989,7 @@
+ 	@Param clear if true, all characters inside the rectangle are set to ASCII code 32 (space).
+ 		If false, only the background color is modified
+ 	@Param flag this flag defines how the cell's background color is modified. See TCOD_bkgnd_flag_t
+-	@Param fmt if NULL, the funtion only draws a rectangle.
++	@Param fmt if NULL, the function only draws a rectangle.
+ 		Else, printf-like format string, eventually followed by parameters. You can use control codes to change the colors inside the string.
+ 	*/
+ 	void printFrame(int x,int y,int w,int h, bool clear=true, TCOD_bkgnd_flag_t flag = TCOD_BKGND_DEFAULT, const char *fmt=NULL, ...);
+@@ -1305,7 +1305,7 @@
+ 	@PageName console_non_blocking_input
+ 	@PageTitle Non blocking user input
+ 	@PageFather console_input
+-	@FuncDesc The prefered way to check for user input is to use checkForEvent below, but you can also get the status of any special key at any time with :
++	@FuncDesc The preferred way to check for user input is to use checkForEvent below, but you can also get the status of any special key at any time with :
+ 	@Cpp static bool TCODConsole::isKeyPressed(TCOD_keycode_t key)
+ 	@C bool TCOD_console_is_key_pressed(TCOD_keycode_t key)
+ 	@Py console_is_key_pressed(key)
+--- a/include/heightmap.hpp
++++ b/include/heightmap.hpp
+@@ -485,7 +485,7 @@
+ 	@Cpp void TCODHeightMap::midPointDisplacement(TCODRandom *rng=NULL,float roughness=0.45f)
+ 	@C void TCOD_heightmap_mid_point_displacement(TCOD_heightmap_t *hm, TCOD_random_t rnd, float roughness)
+ 	@Py heightmap_mid_point_displacement(hm, rng, roughness)
+-	@Param hm	In the C and python version, the adress of the heightmap struct returned by the creation function.
++	@Param hm	In the C and python version, the address of the heightmap struct returned by the creation function.
+ 	@Param rng	Random number generation to use, or NULL/0 to use the default one.
+ 	@Param roughness	Map roughness.
+ 	*/
+--- a/include/howto.hpp
++++ b/include/howto.hpp
+@@ -39,7 +39,7 @@
+ 	@PageFather compile_libtcod
+ 	@PageTitle On Windows with Mingw
+ 	@PageDesc <h4>Mingw installation</h4>
+-	Download the latest version of Mingw from this adress :
++	Download the latest version of Mingw from this address :
+ 	<a href="http://sourceforge.net/projects/mingw/files/">http://sourceforge.net/projects/mingw/files/</a>
+ 
+ 	The latest installer should be at the top of the page with a name starting with mingw-get-inst..
+--- a/include/parser.h
++++ b/include/parser.h
+@@ -153,7 +153,7 @@
+ 	TCOD_list_t structs;
+ 	/* list of custom type parsers */
+ 	TCOD_parser_custom_t customs[16];
+-	/* fatal error occured */
++	/* fatal error occurred */
+ 	bool fatal;
+ 	/* list of properties if default listener is used */
+ 	TCOD_list_t props;
+--- a/include/sys.hpp
++++ b/include/sys.hpp
+@@ -233,7 +233,7 @@
+ 	@PageName system_filesystem
+ 	@PageFather system
+ 	@PageTitle Filesystem utilities
+-	@PageDesc Those are a few function that cannot be easily implemented in a portable way in C/C++. They have no python wrapper since python provides its own builtin functions. All those functions return false if an error occured.
++	@PageDesc Those are a few function that cannot be easily implemented in a portable way in C/C++. They have no python wrapper since python provides its own builtin functions. All those functions return false if an error occurred.
+ 	@FuncTitle Create a directory
+ 	@Cpp static bool TCODSystem::createDirectory(const char *path)
+ 	@C bool TCOD_sys_create_directory(const char *path)
+@@ -384,7 +384,7 @@
+ 	/**
+ 	@PageName system_sdlcbk
+ 	@FuncTitle Managing screen redraw
+-	@FuncDesc libtcod is not aware of the part of the screen your SDL renderer has updated. If no change occured in the console, it won't redraw them except if you tell him to do so with this function
++	@FuncDesc libtcod is not aware of the part of the screen your SDL renderer has updated. If no change occurred in the console, it won't redraw them except if you tell him to do so with this function
+ 	@Cpp void TCODConsole::setDirty(int x, int y, int w, int h)
+ 	@C void TCOD_console_set_dirty(int x, int y, int w, int h)
+ 	@Py TCOD_console_set_dirty(x, y, w, h)
+--- a/include/zip.hpp
++++ b/include/zip.hpp
+@@ -205,7 +205,7 @@
+ 	@PageFather zip
+ 	@FuncTitle Reading from a compressed file
+ 	@FuncDesc You can read data from a file (compressed or not) into the buffer.
+-		The function returns the number of (uncompressed) bytes read or 0 if an error occured. 
++		The function returns the number of (uncompressed) bytes read or 0 if an error occurred.
+ 	@Cpp int TCODZip::loadFromFile(const char *filename)
+ 	@C int TCOD_zip_load_from_file(TCOD_zip_t zip, const char *filename)
+ 	@Param zip	In the C version, the buffer handler, returned by the constructor.
+--- a/libtcod-CHANGELOG.txt
++++ b/libtcod-CHANGELOG.txt
+@@ -185,7 +185,7 @@
+ 1.4.2 : 2009 Oct 06
+ X TCODConsole::blit now takes 2 float parameters :
+    static void blit(const TCODConsole *src,int xSrc, int ySrc, int wSrc, int hSrc, TCODConsole *dst, int xDst, int yDst, float foreground_alpha=1.0f, float background_alpha=1.0f)
+-+ added possiblity to use SDL drawing functions on top of the root console with TCODSystem::registerSDLRenderer   
+++ added possibility to use SDL drawing functions on top of the root console with TCODSystem::registerSDLRenderer   
+ + added Mingos' restrictive precise angle shadowcasting fov algorithm as FOV_RESTRICTIVE
+ + heightmap : added missing TCOD_heightmap_set_value function
+ + new consolas, dejavu, lucida and prestige fonts from Mingos
+@@ -267,7 +267,7 @@
+     template<class T> T * TCODList::removeFast(T *elt)
+ % pathfinding : you don't need to provide coordinates in x,y parameters of Path::walk
+ % improved double/simple walls special characters in tcod layout fonts
+-- fixed SDL dependant features not being available before initRoot is called.
++- fixed SDL dependent features not being available before initRoot is called.
+   If you want to draw on an offscreen console without calling initRoot, you
+   need to call at least setCustomFont to initialize the font. Else characters won't be rendered.
+ - fixed standalone credits page erasing previously fps limit
+@@ -324,7 +324,7 @@
+    TCODNoise::getSimplex
+    TCODNoise::getFbmSimplex
+    TCODNoise::getTurbulenceSimplex
+-   Simplex should be prefered over Perlin for most usages.
++   Simplex should be preferred over Perlin for most usages.
+ + added wavelet noise, similar to perlin, much slower but doesn't blur at high scales. Doesn't work in 4D :
+    TCODNoise::getWavelet
+    TCODNoise::getFbmWavelet
+--- a/samples/worldgen/util_worldgen.cpp
++++ b/samples/worldgen/util_worldgen.cpp
+@@ -234,7 +234,7 @@
+ 	float newWaterLevel=i/255.0f;
+ 	float landCoef = (1.0f-waterLevel)/(1.0f-newWaterLevel);
+ 	float waterCoef = waterLevel / newWaterLevel;
+-	// water level should be rised/lowered to newWaterLevel
++	// water level should be raised/lowered to newWaterLevel
+ 	for ( int x=0; x < HM_WIDTH; x++) {
+ 	    for (int y=0; y < HM_HEIGHT; y++) {
+ 			float h=hm->getValue(x,y);
+--- a/src/README.txt
++++ b/src/README.txt
+@@ -28,13 +28,13 @@
+ txtfield  : work-in-progress text input utility 
+ zip       : compression module
+ 
+-Note that some of the sys toolkits rely on system dependant functions. 
++Note that some of the sys toolkits rely on system dependent functions. 
+ They have currently a single working implementation relying on SDL : sys_sdl_c.c
+-As it is heavily system dependant, the mouse C implementation is in sys_sdl_c.c.
++As it is heavily system dependent, the mouse C implementation is in sys_sdl_c.c.
+ As of 1.4, the image load/save functions are isolated in sys_sdl_XXX.c, 
+ XXX being the image type (currently bmp and png).
+ As of 1.5.1, sys_opengl_c.c contains OpenGL and GLSL renderers. Those two
+-renderers are still dependant on SDL.
++renderers are still dependent on SDL.
+ 
+ libtcod_int.h contains everything that is exported by the toolkits 
+ (implemented in a toolkit and used in another one) but should not be seen 
+--- a/src/png/lodepng.c
++++ b/src/png/lodepng.c
+@@ -4034,7 +4034,7 @@
+       CERROR_TRY_RETURN(unfilter(in, in, w, h, bpp));
+       removePaddingBits(out, in, w * bpp, ((w * bpp + 7) / 8) * 8, h);
+     }
+-    /*we can immediatly filter into the out buffer, no other steps needed*/
++    /*we can immediately filter into the out buffer, no other steps needed*/
+     else CERROR_TRY_RETURN(unfilter(out, in, w, h, bpp));
+   }
+   else /*interlace_method is 1 (Adam7)*/
+@@ -5226,7 +5226,7 @@
+       }
+       else
+       {
+-        /*we can immediatly filter into the out buffer, no other steps needed*/
++        /*we can immediately filter into the out buffer, no other steps needed*/
+         error = filter(*out, in, w, h, &info_png->color, settings);
+       }
+     }
+--- a/src/png/lodepng.h
++++ b/src/png/lodepng.h
+@@ -1511,7 +1511,7 @@
+ *) 22 apr 2012 (!): Made interface more consistent, renaming a lot. Removed
+     redundant C++ codec classes. Reduced amount of structs. Everything changed,
+     but it is cleaner now imho and functionality remains the same. Also fixed
+-    several bugs and shrinked the implementation code. Made new samples.
++    several bugs and shrunk the implementation code. Made new samples.
+ *) 6 nov 2011 (!): By default, the encoder now automatically chooses the best
+     PNG color model and bit depth, based on the amount and type of colors of the
+     raw image. For this, autoLeaveOutAlphaChannel replaced by auto_choose_color.
