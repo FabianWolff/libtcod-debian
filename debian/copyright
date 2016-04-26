@@ -8,6 +8,19 @@ Copyright: 2008-2013 Jice
            2008-2013 Dominik 'Mingos' Marczuk
            2014-2016 Richard Tew
 License:   BSD-3-clause
+Comment:   The following files fall under some informal dedication to
+           the public domain:
+           .
+             python/samples_py.py
+             samples/hmtool/*
+             samples/samples_c.c
+             samples/samples_cpp.cpp
+           .
+           However, since it is not explained exactly what exemption
+           those files have from default copyright restrictions, those
+           dedications are probably not legally binding, in which case
+           the files are covered by the top-level BSD-3-clause license
+           as described in LIBTCOD-LICENSE.txt.
 
 Files:     src/png/*
 Copyright: 2005-2012 Lode Vandevenne
