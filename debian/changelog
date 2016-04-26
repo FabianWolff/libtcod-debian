@@ -1,5 +1,5 @@
-libtcod (1.6.0~pre1+dfsg-1) UNRELEASED; urgency=medium
+libtcod (1.6.0~pre1+dfsg-1) unstable; urgency=medium
 
   * Initial release. Closes: #704587
 
- -- Fabian Wolff <fabi.wolff@arcor.de>  Wed, 23 Mar 2016 15:13:04 +0100
+ -- Fabian Wolff <fabi.wolff@arcor.de>  Tue, 26 Apr 2016 21:19:14 +0200
