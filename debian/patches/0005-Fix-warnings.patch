@@ -1,0 +1,25 @@
+Description: Fix compiler warning
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2016-04-26
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/sys_sdl_c.c
++++ b/src/sys_sdl_c.c
+@@ -183,7 +183,7 @@
+ 	TCOD_ctx.sdl_cbk=renderer;
+ }
+ 
+-void TCOD_sys_map_ascii_to_font(asciiCode, fontCharX, fontCharY) {
++void TCOD_sys_map_ascii_to_font(int asciiCode, int fontCharX, int fontCharY) {
+ 	if ( asciiCode > 0 && asciiCode < TCOD_ctx.max_font_chars )
+ 		TCOD_ctx.ascii_to_tcod[asciiCode] = fontCharX + fontCharY * TCOD_ctx.fontNbCharHoriz;
+ }
+@@ -782,6 +782,7 @@
+ 	return true;
+ }
+ 
++char *strcasestr(const char *, const char *);
+ void TCOD_sys_save_bitmap(void *bitmap, const char *filename) {
+ 	image_support_t *img=image_type;
+ 	while ( img->extension != NULL && strcasestr(filename,img->extension) == NULL ) img++;
