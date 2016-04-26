@@ -1,0 +1,53 @@
+Description: Fix the errors cppcheck reports
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2016-04-26
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/samples/worldgen/util_worldgen.cpp
++++ b/samples/worldgen/util_worldgen.cpp
+@@ -161,6 +161,7 @@
+ 	for (idx=0; idx < MAX_ALT_KEY-1; idx++) {
+ 		if ( altIndexes[idx+1] > ih ) break;
+ 	}
++        --idx;
+ 	float alt = altitudes[idx] + (altitudes[idx+1]-altitudes[idx]) * (ih-altIndexes[idx])/(altIndexes[idx+1]-altIndexes[idx]);
+ 	return alt;
+ }
+@@ -172,6 +173,7 @@
+ 	for (idx=0; idx < MAX_PREC_KEY-1; idx++) {
+ 		if ( precIndexes[idx+1] > iprec ) break;
+ 	}
++        --idx;
+ 	float prec = precipitations[idx] + (precipitations[idx+1]-precipitations[idx]) * (iprec-precIndexes[idx])/(precIndexes[idx+1]-precIndexes[idx]);
+ 	return prec;
+ }
+--- a/src/lex_c.c
++++ b/src/lex_c.c
+@@ -111,6 +111,7 @@
+ 				sprintf (msg, "symbol '%s' too long (max size %d)",
+ 				       _symbols[ lex->nb_symbols ], TCOD_LEX_SYMBOL_SIZE );
+ 				TCOD_last_error=TCOD_strdup(msg);
++				TCOD_lex_delete (lex);
+ 				return NULL;
+ 			}
+ 			strcpy(lex->symbols[ lex->nb_symbols ], _symbols[ lex->nb_symbols ] );
+@@ -127,6 +128,7 @@
+ 				sprintf(msg,"keyword '%s' too long (max size %d)",
+ 						   _keywords[ lex->nb_keywords ], TCOD_LEX_KEYWORD_SIZE);
+ 				TCOD_last_error=TCOD_strdup(msg);
++				TCOD_lex_delete (lex);
+ 				return NULL;
+ 			}
+ 			if ( lex->flags & TCOD_LEX_FLAG_NOCASE )
+--- a/src/parser_c.c
++++ b/src/parser_c.c
+@@ -745,7 +745,7 @@
+ 			}
+ 			if ( def == NULL && dynStruct ) {
+ 				/* dyn struct not found. create it */
+-				TCOD_parser_new_struct(parser,type);
++				/* TCOD_parser_new_struct(parser,type); */
+ 			}
+ 		} while ( def == NULL && dynStruct );
+ 		if (def == NULL ) {

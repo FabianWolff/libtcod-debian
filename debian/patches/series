@@ -1,3 +1,4 @@
 0001-Use-global-zlib.h.patch
 0002-Fix-soname.patch
 0003-Fix-spelling-errors.patch
+0004-Fix-cppcheck.patch

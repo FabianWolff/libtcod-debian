@@ -7,6 +7,33 @@ Last-Update: 2016-04-24
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/build/autotools/run_autotools.sh
 +++ b/build/autotools/run_autotools.sh
+@@ -23,7 +23,7 @@
+ dnl Test for SDL, and define SDL_CFLAGS and SDL_LIBS
+ dnl
+ AC_DEFUN([AM_PATH_SDL2],
+-[dnl 
++[dnl
+ dnl Get the cflags and libraries from the sdl2-config script
+ dnl
+ AC_ARG_WITH(sdl-prefix,[  --with-sdl-prefix=PFX   Prefix where SDL is installed (optional)],
+@@ -102,7 +102,7 @@
+ my_strdup (char *str)
+ {
+   char *new_str;
+-  
++
+   if (str)
+     {
+       new_str = (char *)malloc ((strlen (str) + 1) * sizeof(char));
+@@ -110,7 +110,7 @@
+     }
+   else
+     new_str = NULL;
+-  
++
+   return new_str;
+ }
+ 
 @@ -196,7 +196,7 @@
            echo "*** If you have an old version installed, it is best to remove it, although"
            echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"],
