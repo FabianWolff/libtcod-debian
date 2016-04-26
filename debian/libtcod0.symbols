@@ -1,4 +1,4 @@
-libtcod-1.6.so.0 libtcod-1.6-0 #MINVER#
+libtcod.so.0 libtcod0 #MINVER#
  DllMain@Base 1.6.0~pre1
  SDL_implementation_factory@Base 1.6.0~pre1
  TCOD_amber@Base 1.6.0~pre1
@@ -877,7 +877,7 @@ libtcod-1.6.so.0 libtcod-1.6-0 #MINVER#
  scale_factor@Base 1.6.0~pre1
  start_angle@Base 1.6.0~pre1
  window@Base 1.6.0~pre1
-libtcodxx-1.6.so.0 libtcod-1.6-0 #MINVER#
+libtcodxx.so.0 libtcod0 #MINVER#
  TCOD_CRenderer@Base 1.6.0~pre1
  (c++)"TCOD_path_func(int, int, int, int, void*)@Base" 1.6.0~pre1
  (c++)"TCODParser::newStructure(char const*)@Base" 1.6.0~pre1
@@ -1483,7 +1483,7 @@ libtcodxx-1.6.so.0 libtcod-1.6-0 #MINVER#
  new_flag@Base 1.6.0~pre1
  new_property@Base 1.6.0~pre1
  new_struct@Base 1.6.0~pre1
-libtcodgui-1.6.so.0 libtcod-1.6-0 #MINVER#
+libtcodgui.so.0 libtcod0 #MINVER#
  (c++)"RadioButton::groupSelect@Base" 1.6.0~pre1
  (c++)"RadioButton::defaultGroup@Base" 1.6.0~pre1
  (c++)"RadioButton::onButtonClick()@Base" 1.6.0~pre1
