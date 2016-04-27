@@ -28,3 +28,12 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
  otherincludedir = $(includedir)/libtcod/gui
  otherinclude_HEADERS = \
+@@ -20,7 +21,7 @@
+ 	../../../include/gui/vbox.hpp \
+ 	../../../include/gui/widget.hpp
+ 
+-libtcodgui_la_LIBADD = ../libtcodxx.la
++libtcodgui_la_LIBADD = ../libtcodxx.la ../libtcod.la
+ libtcodgui_la_SOURCES = \
+ 	../../../src/gui/button.cpp \
+ 	../../../src/gui/container.cpp \

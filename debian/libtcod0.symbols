@@ -936,7 +936,8 @@ libtcodxx.so.0 libtcod0 #MINVER#
  (c++)"TCODSystem::mutexIn(void*)@Base" 1.6.0~pre1
  (c++)"TCODSystem::mutexOut(void*)@Base" 1.6.0~pre1
  (c++)"TCODSystem::newMutex()@Base" 1.6.0~pre1
- (c++)"TCODSystem::readFile(char const*, unsigned char**, unsigned long*)@Base" 1.6.0~pre1
+ (c++|arch-bits=64)"TCODSystem::readFile(char const*, unsigned char**, unsigned long*)@Base" 1.6.0~pre1
+ (c++|arch-bits=32)"TCODSystem::readFile(char const*, unsigned char**, unsigned int*)@Base" 1.6.0~pre1
  (c++)"TCODSystem::newThread(int (*)(void*), void*)@Base" 1.6.0~pre1
  (c++)"TCODSystem::writeFile(char const*, unsigned char*, unsigned int)@Base" 1.6.0~pre1
  (c++)"TCODConsole::printFrame(int, int, int, int, bool, TCOD_bkgnd_flag_t, char const*, ...)@Base" 1.6.0~pre1
